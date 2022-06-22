@@ -5,20 +5,20 @@
 class Comifer < Formula
   desc "git helper for generating commit log with emoji"
   homepage "https://jiko21.me/comifer/"
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.1/comifer_darwin_x86_64.tar.gz"
-      sha256 "0f2be9250db1d4a444fc5eb54c9ff268ba8fe8a85db6357b17ffdaab86e5741c"
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_darwin_x86_64.tar.gz"
+      sha256 "aaa70b1c50613d93b624abd3b4de3e720f62ce55b61b15492632d25eaeb5d63f"
 
       def install
         bin.install "comifer"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.1/comifer_darwin_arm64.tar.gz"
-      sha256 "d82c0900b98037e44fb87998ddba9faa400adf366a14112d15d987b868c04a8d"
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_darwin_arm64.tar.gz"
+      sha256 "b4db93696f7924582e43e6395c9609a0c35c3b80a5fe20a7f3294d649777a5e7"
 
       def install
         bin.install "comifer"
@@ -28,16 +28,16 @@ class Comifer < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.1/comifer_linux_x86_64.tar.gz"
-      sha256 "00cf69bbfddcc1c8cf7f7bdeb25e9c43dcf24bf8bd7e4f7f37759286f5040af8"
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_linux_x86_64.tar.gz"
+      sha256 "16eb8bcc2e8c5175a197f196002cc197a29e8df020261c14b943d2e0bd4ec7f0"
 
       def install
         bin.install "comifer"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.1/comifer_linux_arm64.tar.gz"
-      sha256 "0c1742a7498abb5da69eb8159987ffcc0fcc58d0d07003194354e28abc892e47"
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_linux_arm64.tar.gz"
+      sha256 "0faed2abe9c71b11bf6742fc8a5bdeb2d6584eebe6d9b9d25db1e34e30e4c6dc"
 
       def install
         bin.install "comifer"
