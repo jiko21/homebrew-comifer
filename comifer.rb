@@ -5,20 +5,20 @@
 class Comifer < Formula
   desc "git helper for generating commit log with emoji"
   homepage "https://jiko21.me/comifer/"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_darwin_x86_64.tar.gz"
-      sha256 "aaa70b1c50613d93b624abd3b4de3e720f62ce55b61b15492632d25eaeb5d63f"
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_darwin_x86_64.tar.gz"
+      sha256 "8504bd8c4031962f7b352902d704a99818e2c02c536fa6a7e8aa827be760730d"
 
       def install
         bin.install "comifer"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_darwin_arm64.tar.gz"
-      sha256 "b4db93696f7924582e43e6395c9609a0c35c3b80a5fe20a7f3294d649777a5e7"
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_darwin_arm64.tar.gz"
+      sha256 "77dee50385c11d868b4b494eeb0ffd2de2ba4cd52418c5ff9168ec1ee1b0b15f"
 
       def install
         bin.install "comifer"
@@ -27,17 +27,17 @@ class Comifer < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_linux_x86_64.tar.gz"
-      sha256 "16eb8bcc2e8c5175a197f196002cc197a29e8df020261c14b943d2e0bd4ec7f0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_linux_arm64.tar.gz"
+      sha256 "e67cc8aa4d51a470932544a9060aa42b48286ec152be2be7bd6a062b76fd6d47"
 
       def install
         bin.install "comifer"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.2/comifer_linux_arm64.tar.gz"
-      sha256 "0faed2abe9c71b11bf6742fc8a5bdeb2d6584eebe6d9b9d25db1e34e30e4c6dc"
+    if Hardware::CPU.intel?
+      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_linux_x86_64.tar.gz"
+      sha256 "d8d3b2ba5b2bb8af01971af7bec70f719e175ade82f41a65cd3b18807fca29d3"
 
       def install
         bin.install "comifer"
