@@ -5,20 +5,20 @@
 class Comifer < Formula
   desc "git helper for generating commit log with emoji"
   homepage "https://jiko21.me/comifer/"
-  version "0.0.3"
+  version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_darwin_x86_64.tar.gz"
-      sha256 "8504bd8c4031962f7b352902d704a99818e2c02c536fa6a7e8aa827be760730d"
+    on_intel do
+      url "https://github.com/jiko21/comifer/releases/download/v0.1.0/comifer_0.1.0_macOS_x86_64.tar.gz"
+      sha256 "36566ed385d461502e4d3e1b155d29528a4378010a7e3a787a14c26fb066f7fd"
 
       def install
         bin.install "comifer"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_darwin_arm64.tar.gz"
-      sha256 "77dee50385c11d868b4b494eeb0ffd2de2ba4cd52418c5ff9168ec1ee1b0b15f"
+    on_arm do
+      url "https://github.com/jiko21/comifer/releases/download/v0.1.0/comifer_0.1.0_macOS_arm64.tar.gz"
+      sha256 "6eaedb19fed7f0c8194d4943e3b486f7f33a8177eac8e537be25ea84bf5bdab6"
 
       def install
         bin.install "comifer"
@@ -27,20 +27,24 @@ class Comifer < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_linux_arm64.tar.gz"
-      sha256 "e67cc8aa4d51a470932544a9060aa42b48286ec152be2be7bd6a062b76fd6d47"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jiko21/comifer/releases/download/v0.1.0/comifer_0.1.0_Linux_x86_64.tar.gz"
+        sha256 "8f39d06f9698e4af4ef1068f47db3378a443077c96fda118181431953bf9827b"
 
-      def install
-        bin.install "comifer"
+        def install
+          bin.install "comifer"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jiko21/comifer/releases/download/v0.0.3/comifer_linux_x86_64.tar.gz"
-      sha256 "d8d3b2ba5b2bb8af01971af7bec70f719e175ade82f41a65cd3b18807fca29d3"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jiko21/comifer/releases/download/v0.1.0/comifer_0.1.0_Linux_arm64.tar.gz"
+        sha256 "a6e781a4839da85f8fea7f66c5f51293b601156f92bb183debb97acce4070e22"
 
-      def install
-        bin.install "comifer"
+        def install
+          bin.install "comifer"
+        end
       end
     end
   end
